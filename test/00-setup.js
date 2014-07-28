@@ -45,7 +45,7 @@ test('start couch as a zombie child', function (t) {
     if (er) {
 
       if (Date.now() - start < timeout) {
-          t.ok(true, 'Trying again... ' + (count++))
+          t.ok(true, 'Trying again... ' + (count++) + ' ' + (Date.now() - start) + 'ms' + log)
         return setTimeout(function () {
           fs.readFile(logfile, R)
         }, 1000)
