@@ -18,10 +18,7 @@
     "request": "^2.36.0",
     "rimraf": "~2.2.6",
     "tap": "*",
-    "tap-colorize": "^1.2.0",
-    "which": "^1.0.5",
-    "tape": "^2.13.4",
-    "prova": "^1.14.0"
+    "which": "^1.0.5"
   },
   "repository": {
     "type": "git",
