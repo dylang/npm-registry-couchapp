@@ -9,7 +9,7 @@ var http = require('http')
 var url = require('url')
 
 // just in case it was still alive from a previous run, kill it.
-require('./zz-teardown.js')
+//require('./zz-teardown.js')
 
 // run with the cwd of the main program.
 var cwd = path.dirname(__dirname)
@@ -21,6 +21,7 @@ var logfile = path.resolve(__dirname, 'fixtures', 'couch.log')
 var started = /Apache CouchDB has started on http:\/\/127\.0\.0\.1:15986\/\n$/
 
 test('start couch as a zombie child', {timeout: timeout }, function (t) {
+    t.ok(true, 'timeout is ' + timeout)
   var fd = fs.openSync(pidfile, 'wx')
 
   try { fs.unlinkSync(logfile) } catch (er) {}
