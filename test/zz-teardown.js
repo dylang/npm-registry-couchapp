@@ -13,7 +13,7 @@ var repl = path.resolve(__dirname, 'fixtures', '_replicator.couch')
 var rdes = path.resolve(__dirname, 'fixtures', '.registry_design')
 var udes = path.resolve(__dirname, 'fixtures', '._users_design')
 
-test('cleanup', function (t) {
+test('cleanup', {timeout: 60000 }, function (t) {
   try {
     var pid = fs.readFileSync(pidfile)
   } catch (er) {}
