@@ -3,7 +3,7 @@ node_js:
   - "0.10"
 before_install:
   - "cat test/fixtures/couch.ini"
-  - "sudo couchdb -a test/fixtures/couch.ini &"
+  - "couchdb -a test/fixtures/couch.ini &"
   - "npm install -g npm@1.4.21"
   - "npm --version"
   - "npm install -g couchapp"
@@ -12,8 +12,6 @@ before_install:
   - "curl -X PUT http://127.0.0.1:5984/_config/log/level -d '\"debug\"'"
 env:
   - TAP_TIMEOUT 100
-    # Lets know what CouchDB we are playing with
-    # and make sure its logging debug
 after_failure:
   - "curl -X GET http://127.0.0.1:5984/_log?bytes=1000000"
 script: "npm test"
