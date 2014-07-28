@@ -11,7 +11,7 @@ var http = require('http')
 var url = require('url')
 
 // just in case it was still alive from a previous run, kill it.
-//require('./zz-teardown.js')
+require('./zz-teardown.js')
 
 // run with the cwd of the main program.
 var cwd = path.dirname(__dirname)
@@ -124,8 +124,3 @@ test('users ddoc', function(t) {
   })
 })
 
-
-test('all done', function(t){
-    require('./zz-teardown.js')
-    t.end()
-})
