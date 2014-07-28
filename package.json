@@ -20,7 +20,8 @@
     "tap": "*",
     "tap-colorize": "^1.2.0",
     "which": "^1.0.5",
-    "tape": "^2.13.4"
+    "tape": "^2.13.4",
+    "prova": "^1.14.0"
   },
   "repository": {
     "type": "git",

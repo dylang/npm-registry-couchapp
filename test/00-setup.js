@@ -2,7 +2,9 @@
 // the zz-teardown.js test kills it.
 
 var spawn = require('child_process').spawn
-var test = require('tap').test
+//var test = require('tap').test
+var test = require('tape');
+//var test = require('prova');
 var path = require('path')
 var fs = require('fs')
 var http = require('http')
@@ -20,13 +22,14 @@ var pidfile = path.resolve(__dirname, 'fixtures', 'pid')
 var logfile = path.resolve(__dirname, 'fixtures', 'couch.log')
 var started = /Apache CouchDB has started on http:\/\/127\.0\.0\.1:15986\/\n$/
 
-test('wtf', {timeout: timeout }, function (t) {
-    //t.ok(true, 'wtf', {timeout: timeout })
-    //t.pass('thank god')
-    t.end()
+test('wtf',  function (t) {
+        t.ok(true, 'wtf', {timeout: timeout })
+        t.pass('thank god')
+        t.end()
+
 })
 
-test('start couch as a zombie child', {timeout: timeout }, function (t) {
+test('start couch as a zombie child',  function (t) {
     //t.ok(true, 'timeout is', { timeout: timeout })
   var fd = fs.openSync(pidfile, 'wx')
 
