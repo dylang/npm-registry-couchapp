@@ -5,6 +5,8 @@ before_install:
   - "npm install -g npm@1.4.21"
   - "npm --version"
   - "npm install -g couchapp"
+services:
+  - "couchdb -a test/fixtures/couch.ini"
 env:
   - TAP_TIMEOUT 100
 script: "npm test"

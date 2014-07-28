@@ -6,7 +6,7 @@
     "start": "./push.sh",
     "load": "bash ./load-views.sh",
     "copy": "bash ./copy.sh",
-    "test": "tape --diag --timeout 100 test/00-setup.js"
+    "test": "tap --diag --timeout 100 test/00-setup.js"
   },
   "dependencies": {
     "couchapp": "~0.11.0",

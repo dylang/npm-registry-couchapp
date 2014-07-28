@@ -3,8 +3,8 @@
 
 var fs = require('fs')
 var rimraf = require('rimraf')
-//var test = require('tap').test
-var test = require('tape');
+var test = require('tap').test
+//var test = require('tape');
 //var test = require('prova');
 
 var path = require('path')

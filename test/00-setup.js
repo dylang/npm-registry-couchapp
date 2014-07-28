@@ -2,8 +2,8 @@
 // the zz-teardown.js test kills it.
 
 var spawn = require('child_process').spawn
-//var test = require('tap').test
-var test = require('tape');
+var test = require('tap').test
+//var test = require('tape');
 //var test = require('prova');
 var path = require('path')
 var fs = require('fs')
@@ -22,13 +22,7 @@ var pidfile = path.resolve(__dirname, 'fixtures', 'pid')
 var logfile = path.resolve(__dirname, 'fixtures', 'couch.log')
 var started = /Apache CouchDB has started on http:\/\/127\.0\.0\.1:15986\/\n$/
 
-test('wtf',  function (t) {
-        t.ok(true, 'wtf', {timeout: timeout })
-        t.pass('thank god')
-        t.end()
-
-})
-
+/*
 test('start couch as a zombie child',  function (t) {
     //t.ok(true, 'timeout is', { timeout: timeout })
   var fd = fs.openSync(pidfile, 'wx')
@@ -72,7 +66,7 @@ test('start couch as a zombie child',  function (t) {
   })
 })
 
-/*
+*/
 
 test('create test db', function(t) {
   var u = url.parse('http://admin:admin@localhost:15986/registry')
@@ -130,7 +124,6 @@ test('users ddoc', function(t) {
   })
 })
 
-*/
 
 test('all done', function(t){
     require('./zz-teardown.js')
