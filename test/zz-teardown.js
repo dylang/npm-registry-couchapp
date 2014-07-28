@@ -13,20 +13,30 @@ var repl = path.resolve(__dirname, 'fixtures', '_replicator.couch')
 var rdes = path.resolve(__dirname, 'fixtures', '.registry_design')
 var udes = path.resolve(__dirname, 'fixtures', '._users_design')
 
+var start = Date.now();
+
 test('cleanup', {timeout: 60000 }, function (t) {
+    t.ok(true, 'before try ' + (Date.now() - start) + 'ms')
   try {
+      t.ok(true, 'before read ' + (Date.now() - start) + 'ms')
     var pid = fs.readFileSync(pidfile)
-  } catch (er) {}
+      t.ok(true, 'after read ' + pidfile + ' ' + (Date.now() - start) + 'ms')
+  } catch (er) {
+
+      t.ok(true, 'catch ' + er.message + ' ' + (Date.now() - start) + 'ms')
+  }
 
   if (pid) {
+      t.ok(true, 'if pid ' + pid + ' ' + (Date.now() - start) + 'ms')
     try { process.kill(pid) } catch (er) {
       // ok if already killed
       t.equal(er.code, 'ESRCH')
     }
   }
-
+    t.ok(true, 'rmraf ' + ' ' + (Date.now() - start) + 'ms')
   files = [ pidfile, repl, log, _users, db, rdes, udes ]
   files.forEach(function(file) {
+      t.ok(true, 'delete  ' + file + ' ' + (Date.now() - start) + 'ms')
     rimraf.sync(file)
   })
 
