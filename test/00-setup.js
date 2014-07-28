@@ -21,13 +21,13 @@ var logfile = path.resolve(__dirname, 'fixtures', 'couch.log')
 var started = /Apache CouchDB has started on http:\/\/127\.0\.0\.1:15986\/\n$/
 
 test('wtf', {timeout: timeout }, function (t) {
-    t.ok(true, 'wtf ' + timeout)
-    t.pass('thank god')
+    t.ok(true, 'wtf', timeout)
+    //t.pass('thank god')
     t.end()
 })
 
 test('start couch as a zombie child', {timeout: timeout }, function (t) {
-    t.ok(true, 'timeout is ' + timeout)
+    t.ok(true, 'timeout is', timeout)
   var fd = fs.openSync(pidfile, 'wx')
 
   try { fs.unlinkSync(logfile) } catch (er) {}
