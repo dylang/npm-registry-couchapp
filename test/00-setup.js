@@ -65,6 +65,8 @@ test('start couch as a zombie child', {timeout: timeout }, function (t) {
   })
 })
 
+/*
+
 test('create test db', function(t) {
   var u = url.parse('http://admin:admin@localhost:15986/registry')
   u.method = 'PUT'
@@ -119,4 +121,11 @@ test('users ddoc', function(t) {
     t.notOk(code)
     t.end()
   })
+})
+
+*/
+
+test('all done', function(t){
+    require('./zz-teardown.js')
+    t.end()
 })
