@@ -86,7 +86,8 @@ test('create test db', function(t) {
   }).end()
 })
 
-test('get the git-describe output', function(t) {
+
+!process.env.TRAVIS && test('get the git-describe output', function(t) {
   var c = spawn('git', ['describe', '--tags'])
   c.stderr.pipe(process.stderr)
   var desc = ''

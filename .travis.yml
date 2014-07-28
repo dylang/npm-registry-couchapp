@@ -12,8 +12,7 @@ before_install:
   - "curl -X GET http://127.0.0.1:15986/"
   - "curl -X PUT http://127.0.0.1:15986/_config/log/level -d '\"debug\"'"
 env:
-  - DEPLOY_VERSION testing
-  - TAP_TIMEOUT 100
+  - TAP_TIMEOUT=100 DEPLOY_VERSION=testing
 after_failure:
   - "curl -X GET http://127.0.0.1:15986/_log?bytes=1000000"
 script: "npm test"
