@@ -5,11 +5,10 @@ before_install:
   - "cat test/fixtures/couch.ini"
   - "sudo mkdir -p /var/run/couchdb"
   - "sudo chown -R couchdb /var/run/couchdb"
-  - "sudo couchdb -a test/fixtures/couch.ini"
+  - "sudo couchdb -a test/fixtures/couch.ini &"
   - "npm install -g npm@1.4.21"
   - "npm --version"
   - "npm install -g couchapp"
-  - "sleep 5"
   - "curl -X GET http://127.0.0.1:5984/"
   - "curl -X PUT http://127.0.0.1:5984/_config/log/level -d '\"debug\"'"
 env:
