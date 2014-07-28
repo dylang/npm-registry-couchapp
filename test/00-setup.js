@@ -50,6 +50,10 @@ test('start couch as a zombie child',  function (t) {
   var start = Date.now()
   fs.readFile(logfile, function R (er, log) {
     log = log ? log.toString() : ''
+
+      t.ok(true, 'Log... ' + log)
+      er && t.ok(true, 'Err... ' + er.message || er)
+
     if (!er && !log.match(started))
       er = new Error('not started yet')
     if (er) {
