@@ -6,7 +6,7 @@
     "start": "./push.sh",
     "load": "bash ./load-views.sh",
     "copy": "bash ./copy.sh",
-    "test": "tap --diag --timeout 100 test/00-setup.js"
+    "test": "tape --diag --timeout 100 test/00-setup.js"
   },
   "dependencies": {
     "couchapp": "~0.11.0",
@@ -19,7 +19,8 @@
     "rimraf": "~2.2.6",
     "tap": "*",
     "tap-colorize": "^1.2.0",
-    "which": "^1.0.5"
+    "which": "^1.0.5",
+    "tape": "^2.13.4"
   },
   "repository": {
     "type": "git",
