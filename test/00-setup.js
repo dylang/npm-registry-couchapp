@@ -22,14 +22,13 @@ var pidfile = path.resolve(__dirname, 'fixtures', 'pid')
 var logfile = path.resolve(__dirname, 'fixtures', 'couch.log')
 var started = /Apache CouchDB has started on http:\/\/127\.0\.0\.1:15986\/\n$/
 
-/*
 test('start couch as a zombie child',  function (t) {
     //t.ok(true, 'timeout is', { timeout: timeout })
   var fd = fs.openSync(pidfile, 'wx')
 
   try { fs.unlinkSync(logfile) } catch (er) {}
 
-  var child = spawn('couchdb', ['-a', conf], {
+  var child = spawn('sudo', ['couchdb', '-a', conf], {
     detached: true,
     stdio: 'ignore',
     cwd: cwd
@@ -66,7 +65,6 @@ test('start couch as a zombie child',  function (t) {
   })
 })
 
-*/
 
 test('create test db', function(t) {
   var u = url.parse('http://admin:admin@localhost:15986/registry')
