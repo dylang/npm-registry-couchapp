@@ -15,9 +15,11 @@ before_install:
   - "npm --version"
   - "npm install -g couchapp"
   - "sleep 5"
+  - "pwd"
   - "curl -X GET http://127.0.0.1:15986/"
   - "curl -X GET http://localhost:15986/"
   - "curl -X PUT http://127.0.0.1:15986/_config/log/level -d '\"debug\"'"
+  - "curl -X PUT http://localhost:15986/_config/log/level -d '\"debug\"'"
 env:
   - TAP_TIMEOUT=100 DEPLOY_VERSION=testing
 after_failure:
