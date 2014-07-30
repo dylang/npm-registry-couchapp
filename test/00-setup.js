@@ -28,7 +28,14 @@ test('start couch as a zombie child',  function (t) {
 
   try { fs.unlinkSync(logfile) } catch (er) {}
 
-  var child = spawn('sudo', ['couchdb', '-a', conf], {
+  var cmd = 'sudo'
+  var args = ['couchdb', '-a', conf]
+
+  if (!process.env.TRAVIS) {
+    cmd = args.shift();
+  }
+
+  var child = spawn(cmd, args, {
     detached: true,
     stdio: 'ignore',
     cwd: cwd

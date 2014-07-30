@@ -4,8 +4,6 @@
 var fs = require('fs')
 var rimraf = require('rimraf')
 var test = require('tap').test
-//var test = require('tape');
-//var test = require('prova');
 
 var path = require('path')
 var pidfile = path.resolve(__dirname, 'fixtures', 'pid')
@@ -37,7 +35,7 @@ test('cleanup', {timeout: 60000 }, function (t) {
     }
   }
     t.ok(true, 'rmraf ' + ' ' + (Date.now() - start) + 'ms')
-  var files = [ pidfile, repl, log, _users, db, rdes ] //, udes
+  var files = [ pidfile, repl, log, _users, db, rdes, udes ]
   files.forEach(function(file) {
       t.ok(true, 'delete  ' + file + ' ' + (Date.now() - start) + 'ms')
     rimraf.sync(file)

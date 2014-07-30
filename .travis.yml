@@ -4,9 +4,8 @@ node_js:
   - "0.11"
 before_install:
   - "sudo mkdir -p /var/run/couchdb"
-  #- "sudo chown -R couchdb /var/run/couchdb"
-  - "npm install -g couchapp"
-  #- "sleep 5"
+  - "npm install -g npm@^2"
+#  - "npm install -g couchapp"
 env:
   - DEPLOY_VERSION=testing
 script: "npm test"
