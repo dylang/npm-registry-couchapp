@@ -31,9 +31,9 @@ test('start couch as a zombie child',  function (t) {
   var cmd = 'sudo'
   var args = ['couchdb', '-a', conf]
 
-  //if (!process.env.TRAVIS) {
+  if (!process.env.TRAVIS) {
     cmd = args.shift();
-  //}
+  }
 
   var child = spawn(cmd, args, {
     detached: true,
