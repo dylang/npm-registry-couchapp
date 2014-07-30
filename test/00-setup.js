@@ -92,19 +92,21 @@ test('create test db', function(t) {
 })
 
 
-!process.env.TRAVIS && test('get the git-describe output', function(t) {
-  var c = spawn('git', ['describe', '--tags'])
-  c.stderr.pipe(process.stderr)
-  var desc = ''
-  c.stdout.on('data', function(d) {
-    desc += d
-  })
+if (!process.env.TRAVIS) {
+  test('get the git-describe output', function (t) {
+    var c = spawn('git', ['describe', '--tags'])
+    c.stderr.pipe(process.stderr)
+    var desc = ''
+    c.stdout.on('data', function (d) {
+      desc += d
+    })
 
-  c.stdout.on('end', function() {
-    process.env.DEPLOY_VERSION = desc.trim()
-    t.end()
+    c.stdout.on('end', function () {
+      process.env.DEPLOY_VERSION = desc.trim()
+      t.end()
+    })
   })
-})
+}
 
 test('ddoc', function(t) {
   var app = require.resolve('../registry/app.js')
