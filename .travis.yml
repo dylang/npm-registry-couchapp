@@ -8,6 +8,8 @@ before_install:
   #- "sudo touch test/fixtures/registry.couch"
   # "sudo touch test/fixtures/_users.couch"
   - "sudo chown -R couchdb test/fixtures"
+  - "sudo mkdir -p test/fixtures/._users_design"
+  - "sudo chown -R couchdb test/fixtures/._users_design"
   #- "sudo couchdb -a test/fixtures/couch.ini &"
   #- "which npm"
   - "npm install -g npm@^2"

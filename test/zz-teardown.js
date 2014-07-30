@@ -37,7 +37,7 @@ test('cleanup', {timeout: 60000 }, function (t) {
     }
   }
     t.ok(true, 'rmraf ' + ' ' + (Date.now() - start) + 'ms')
-  files = [ pidfile, repl, log, _users, db, rdes, udes ]
+  var files = [ pidfile, repl, log, _users, db, rdes, udes ]
   files.forEach(function(file) {
       t.ok(true, 'delete  ' + file + ' ' + (Date.now() - start) + 'ms')
     rimraf.sync(file)
